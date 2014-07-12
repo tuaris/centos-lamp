@@ -13,6 +13,9 @@ RUN yum install httpd -y
 RUN yum install mariadb-server mariadb -y
 RUN yum install php php-mysqli -y
 
+# Initialize Database Files
+RUN /usr/libexec/mariadb-prepare-db-dir
+
 # Enable and Run Apache
 RUN systemctl enable httpd.service
 
