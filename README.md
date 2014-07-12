@@ -1,4 +1,4 @@
-docker-centos-lamp
+Centos with LAMP
 ==================
 
-Docker Image with latest Centos, PHP, Apache, and MySQl/MariaDB 
+Docker Image with latest Centos, PHP, Apache, and MySQL/MariaDB 
