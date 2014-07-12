@@ -19,9 +19,6 @@ RUN systemctl enable httpd.service
 # Enable MySQL/MariaDB
 RUN systemctl enable mariadb.service
 
-#Open port 80 on Firewall
-RUN /usr/bin/firewall-cmd --permanent --add-port=80/tcp
-
 ##################### INSTALLATION END #####################
 EXPOSE 80
 CMD ["/usr/sbin/init"]
