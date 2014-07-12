@@ -4,19 +4,18 @@
 ############################################################
 
 # Set the base image to Centos
-FROM centos
+FROM tuaris/docker-centos-systemd
 MAINTAINER Daniel Morante
 
-# Udate and Install Required RPM Packages
-RUN yum update -y
-RUN yum install httpd -y
-RUN yum install mariadb-server mariadb -y
-RUN yum install php php-mysqli -y
+# Install Required RPM Packages
+RUN yum install httpd -y; yum clean all
+RUN yum install mariadb-server mariadb -y; yum clean all
+RUN yum install php php-mysqli -y; yum clean all
 
-# Initialize Database Files
+# Initialize Database Directory
 RUN /usr/libexec/mariadb-prepare-db-dir
 
-# Enable and Run Apache
+# Enable Apache
 RUN systemctl enable httpd.service
 
 # Enable MySQL/MariaDB
