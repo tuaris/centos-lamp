@@ -4,7 +4,7 @@
 ############################################################
 
 # Set the base image to Centos
-FROM tuaris/docker-centos-systemd
+FROM tuaris/centos-systemd
 MAINTAINER Daniel Morante
 
 # Install Required RPM Packages
